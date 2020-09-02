@@ -1,0 +1,21 @@
+---
+name: 'dc deploy'
+description: 'write a docker compose file to the workspace'
+inputs:
+  filename:
+    description: 'the filename to write to'
+    required: true
+    default: './docker-compose.yml'
+  mountdir:
+    description: 'the directory on the host to mount to the nginx dir'
+    required: true
+  url:
+    description: 'the url to serve the website on'
+    required: true
+  hostname:
+    description: 'the hostname of the site'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
